@@ -1,0 +1,159 @@
+.item {
+    border-top: 1px solid rgba(0,0,0,.04);
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.item-main{
+    color: #304455;
+    text-decoration: none;
+}
+.head_logo {
+    text-decoration: none;
+    float: left;
+}
+
+.head {
+    line-height: 1.32;
+    border-bottom: 0.5px solid rgba(0,0,0,.04);
+}
+
+.head {
+    max-width: 860px;
+    padding: 20px ;
+    margin: 0 auto;
+}
+
+.inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 16px;
+    box-sizing: border-box;
+    padding-top: 30px;
+}
+
+.main {
+    min-height: 500px;
+}
+
+.info {
+    min-height: 40px;
+    margin-bottom: 30px;
+}
+
+a.item-main:hover{border-bottom:2px solid #42b983}
+
+a.head_logo{font-size: 16px; color: rgba(0,0,0,0.1);}
+a.head_logo:hover{color: rosybrown;}
+.sign_panel {
+    max-width: 400px;
+    margin: 0 auto;
+    min-height: 500px;
+    
+}
+.sign_panel input {
+    min-width: 100%;
+    height: 30px;
+}
+.sign_panel input[type="submit"] {
+    color: silver;
+}
+.sign_panel #password {
+    margin-bottom: 40px;
+}
+
+.sign_panel {
+    margin-top: 30px;
+}
+
+.signup_panel {
+    max-width: 400px;
+    margin: 0 auto;
+    min-height: 500px;
+    
+}
+.signup_panel input {
+    min-width: 100%;
+    height: 30px;
+}
+input[type="submit"] {
+    color: silver;
+}
+.signup_panel #password_again {
+    margin-bottom: 40px;
+}
+
+.signup_panel {
+    margin-top: 30px;
+}
+
+.new_panel {
+    max-width: 400px;
+    margin: 0 auto;
+    min-height: 500px;
+}
+
+.new_panel input {
+    min-width: 100%;
+    height: 30px;
+}
+.new_panel textarea {
+    resize: none;
+    outline: none;
+    min-width: 100%;
+    height: 100px;
+}
+
+.site_foot {
+    padding: 10px 0 20px;
+    border-top: 1px solid #eee;
+    color: #999;
+    text-align: center;
+    font-size: 13px;
+}
+
+.created {
+    color: rgba(0,0,0,.4);
+    font-size: 13px;
+}
+
+.article {
+    font-family: "Helvetica Neue","Helvetica","Arial","PingFang SC","Hiragino Sans GB","Droid Sans Fallback","Microsoft YaHei",sans-serif;
+}
+
+.article-header {
+    font-size: 24px;
+    font-family: "Georgia","Xin Gothic","PingFang SC","Hiragino Sans GB","Droid Sans Fallback","Microsoft YaHei",sans-serif;
+}
+
+.article-info {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    max-width: 760px;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+}
+img {
+    max-width: 100%;
+    margin: 0 auto;
+}
+blockquote {
+    border-left: 4px solid #42b983;
+    padding-left: 20px;
+    margin: 2em 0;
+}
+
+body {
+    margin:0;
+}
+
+.article-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.manage {
+    float: right;
+}

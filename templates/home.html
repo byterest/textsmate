@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} 主页 {% endblock %}
+
+{%  block body %}
+
+<div class="info">
+    <div class="inner">
+        <h1>TextsMate</h1>
+        <a href="https://twitter.com/textsmate"><img width="32px" src="{{ url_for('static', filename='logo/twitter.svg') }}" alt=""></a> 
+        <a href="t.me/lwsly"><img width="32px" src="{{ url_for('static', filename='logo/telegram.svg') }}" alt=""></a> 
+    </div>
+</div>
+<div class="main">
+    <div class="inner">
+            {% for post in posts %}
+            <div class="item">
+                <span class="created">{{post.time}}</span>
+                <h3><a href="/post/{{post.id}}" class="item-main">{{post.title}}</a></h3>
+            </div>
+            
+            {% endfor %}
+</div>
+
+</div>
+{% endblock %}

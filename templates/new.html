@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} 新文章 {% endblock %}
+
+{%  block body %} 
+
+<div class="new_panel">
+    <form action="/post/new/" method="post">
+        {{ form.csrf_token }}
+        {{ message }}
+         <p>{{ form.title.label }}</p> 
+        {{ form.title }}
+        <p>{{ form.body.label }}</p>
+        {{ form.body }}
+        <p><input type="submit" value="发表"></p>
+    </form>
+</div>
+{% endblock %}

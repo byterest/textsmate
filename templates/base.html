@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+  <div class="head">
+        <a href="/" class="head_logo">TextsMate</a>
+</div>
+   {%  block body %} {% endblock %}
+
+<div class="site_foot">
+  <div class="container">
+    © Copyright TextsMate by lws 2020.
+  </div>
+  <p>
+    Hosted on <a href="https://www.vultr.com/?ref=7500386">vultr</a>
+  </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %} {{ post.title }} {% endblock %}
+
+{%  block body %} 
+<div class="article-info">
+    <h1 class="article-header">{{post.title}}</h1>
+    <p class="created">{{post.time}}</p>
+</div>
+<div class="inner" style="min-height: 300px;">
+    <div class="article">
+        {{ post.body }}
+    </div>
+</div>
+{% endblock %}
