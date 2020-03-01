@@ -5,7 +5,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user
 from datetime import datetime
 from forms import LoginForm, SignupForm, WriteForm, EditForm
-from markdown import markdown
+import mistune
 from markupsafe import Markup
 
 
@@ -82,10 +82,10 @@ def newpost():
         flash('can not')
     return render_template('new.html', form=form)
 
-@app.route('/post/<int:id>/')
+@app.route('/post/<int:id>')
 def getpost(id):
     post = Post.query.filter(Post.id==id).first()
-    body = markdown(post.body)
+    body = mistune.markdown(post.body)
     post = {
         'title':post.title,
         'body':Markup(body),
@@ -135,6 +135,10 @@ def delete(id):
     db.session.delete(post)
     db.session.commit()
     return redirect(url_for('manage'))
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

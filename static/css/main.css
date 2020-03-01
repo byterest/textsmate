@@ -13,14 +13,28 @@
 }
 
 .head {
+    padding: 20px 0;
     line-height: 1.32;
     border-bottom: 0.5px solid rgba(0,0,0,.04);
 }
 
-.head {
+.head .header{
     max-width: 860px;
-    padding: 20px ;
+}
+.header {
+    padding: 0 20px;
     margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.header > nav {
+    float: right;
+}
+
+.header::after {
+    display: table;
+    content: "";
+    clear: both;
 }
 
 .inner {
@@ -156,4 +170,23 @@ body {
 
 .manage {
     float: right;
+}
+
+pre {
+    background: #f6f8fa;
+    padding: 7px 7px;
+    border-radius: 3px;
+    overflow: auto;
+    line-height: 1.5;
+}
+
+pre > code {
+    font-size: 15px;
+    font-family: Consolas,Menlo,Monaco,Courier New,monospace;
+    
+}
+
+.promotion {
+    color: skyblue;
+    text-decoration: none;
 }
