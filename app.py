@@ -7,7 +7,7 @@ from datetime import datetime
 from forms import LoginForm, SignupForm, WriteForm, EditForm
 import mistune
 from markupsafe import Markup
-
+from translate import trans
 
 app = Flask(__name__)
 
@@ -18,7 +18,7 @@ db.init_app(app)
 login_manager.init_app(app)
 
 # routes
-@app.route('/signup/', methods=['GET', 'POST'])
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
     form = SignupForm()
     if form.validate_on_submit():
@@ -48,7 +48,7 @@ def home():
         fmtpost.append(temp)
     return render_template('home.html', posts=fmtpost)
 
-@app.route('/signin/',methods=['GET','POST'])
+@app.route('/signin',methods=['GET','POST'])
 def signin():
     form = LoginForm()
     if form.validate_on_submit():
@@ -63,13 +63,13 @@ def signin():
         flash('failed to log in', 'danger')
     return render_template('signin.html', form=form)
 
-@app.route('/logout/')
+@app.route('/logout')
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('signin'))
 
-@app.route('/post/new/', methods=['GET', 'POST'])
+@app.route('/post/new', methods=['GET', 'POST'])
 @login_required
 def newpost():
     form = WriteForm()
@@ -85,7 +85,7 @@ def newpost():
 @app.route('/post/<int:id>')
 def getpost(id):
     post = Post.query.filter(Post.id==id).first()
-    body = mistune.markdown(post.body)
+    body = trans(post.body)
     post = {
         'title':post.title,
         'body':Markup(body),
@@ -108,30 +108,30 @@ def manage():
         fmtpost.append(temp)
     return render_template('manage.html', posts=fmtpost)
 
-@app.route('/post/<int:id>/edit/', methods=['GET','POST'])
+@app.route('/post/<int:id>/edit', methods=['GET','POST'])
 @login_required
 def edit(id):
     post = Post.query.filter(Post.id==id).first()
     form = EditForm(title=post.title,body=post.body)
     if current_user != post.user:
         flash("You do not have this permission to edit article")
-        return redirect('/post/'+str(id)+'/')
+        return redirect('/post/'+str(id))
     if form.validate_on_submit():
         post.title = form.title.data
         post.body = form.body.data
         db.session.commit()
-        return redirect('/post/'+str(id)+'/')
+        return redirect('/post/'+str(id))
     else:
         flash("There is an error")
     return render_template('edit.html', form=form, id=id)
 
-@app.route('/post/<int:id>/delete/')
+@app.route('/post/<int:id>/delete')
 @login_required
 def delete(id):
     post = Post.query.filter(Post.id==id).first()
     if current_user != post.user:
         flash("You do not have this permission to edit article")
-        return redirect('/post/'+str(id)+'/')
+        return redirect('/post/'+str(id))
     db.session.delete(post)
     db.session.commit()
     return redirect(url_for('manage'))
@@ -139,6 +139,9 @@ def delete(id):
 @app.route('/about')
 def about():
     return render_template('about.html')
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('errors/404.html'), 404
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

@@ -3,7 +3,7 @@
 
 {%  block body %} 
 <div class="sign_panel">
-    <form action="/signin/" method="post">
+    <form action="/signin" method="post">
         {{ form.csrf_token }}
         {{ message }}
          <p>{{ form.username.label }}</p> 

@@ -4,7 +4,7 @@
 {%  block body %} 
 
 <div class="new_panel">
-    <form action="/post/{{id}}/edit/" method="post">
+    <form action="/post/{{id}}/edit" method="post">
         {{ form.csrf_token }}
         {{ message }}
          <p>{{ form.title.label }}</p> 

@@ -134,6 +134,18 @@ input[type="submit"] {
     font-family: "Helvetica Neue","Helvetica","Arial","PingFang SC","Hiragino Sans GB","Droid Sans Fallback","Microsoft YaHei",sans-serif;
 }
 
+.article  a:not(.referlink) {
+    border-bottom: 2px solid #42b983;
+    text-decoration: none;
+    color: gray;
+    
+}
+.promotion {
+    border-bottom: 2px solid #42b983;
+    text-decoration: none;
+    color: gray;
+}
+
 .article-header {
     font-size: 24px;
     font-family: "Georgia","Xin Gothic","PingFang SC","Hiragino Sans GB","Droid Sans Fallback","Microsoft YaHei",sans-serif;
@@ -186,7 +198,14 @@ pre > code {
     
 }
 
-.promotion {
-    color: skyblue;
+
+.referlink {
+    display: block;
+    padding: 14px;
+    border: 1px solid #f6f6f6;
+    border-radius: 4px;
     text-decoration: none;
+    background: #f6f6f6;
+    margin: 5px;
+    color: gray;
 }
