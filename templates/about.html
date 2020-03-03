@@ -1,17 +1,25 @@
 {% extends 'base.html' %}
 {% block title %} 关于 {% endblock %}
-
-{%  block body %} 
+{% block twittertitle %} 关于 TextsMate {% endblock %}
+{% block twitterdesc %} 网站的诞生与维护 {% endblock %}
+{%  block body %}
 <div class="article-info">
     <h1 class="article-header">ABOUT</h1>
 </div>
 <div class="inner" style="min-height: 300px;">
     <div class="article">
-        <p>网站用到的技术：Flask, SQlite, 域名的由来是一款 Mac OS X 的文本编辑器
+        <p>
+            由于疫情的影响，决定在家写一个博客，虽然之前用很多框架写过博客，包括 Go, PHP, Django ， 还用过 Hexo 与 GitHub Pages 搭建过博客，但都因为三分热度没做了，如今电脑里面仍有这些博客的代码。
+        </p>
+        <p>
+            网站几乎没有 JavaScript，只有 CSS 与 HTML，本想用 VUE 做前端，无赖对 SEO 不友好遂放弃。网站的一些配色参考了 VUE 与 GitHub
+        </p>
+        <p>
+            网站用到的技术：Flask, SQLite, 域名的由来是一款 Mac OS X 的文本编辑器
             TextMate, 但是 .com 域名被注册，想起 Texts 是文本的复数，因此作为一个博客的名字还是合适的。
         </p>
         <p>
-            网站的服务器是 VULTR 的，我有一个优惠码，你充值 25 美元，然后活跃 30 天就可以获得 100 美元，优惠码在网站的最下面。
+            网站的服务器是 <a href="https://www.vultr.com/?ref=7500386">VULTR</a>  的，我有一个优惠码，你充值 25 美元，然后活跃 30 天就可以获得 100 美元，只需要点击链接进入注册即可。
         </p>
         <p>
             当然这个博客的代码是开源的，你可以在 <a href="https://github.com/luowanshun/textsmate">Github</a> 上查看源代码。

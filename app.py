@@ -37,7 +37,7 @@ def signup():
 
 @app.route('/')
 def home():
-    posts = Post.query.all()
+    posts = Post.query.order_by(Post.id.desc())
     fmtpost = []
     for post in posts:
         temp = {
