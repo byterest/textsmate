@@ -16,6 +16,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/textsmate@1.0.0/main.css">
     {% endif %}
    <title>{% block title %} {% endblock %}</title>
+   <link rel="shortcut icon" href="{{ url_for('static', filename='logo/favicon.ico') }}">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ config['GATAG'] }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{ config["GATAG"] }}');
+</script>
+
 </head>
 <body>
   <div class="head">

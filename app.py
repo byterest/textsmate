@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, make_response
 from exts import db, login_manager
 from models import User, Post
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -143,5 +143,19 @@ def about():
 def page_not_found(e):
     return render_template('errors/404.html'), 404
 
+@app.route('/sitemap.xml')
+def sitemap():
+    posts = Post.query.all()
+    fmtpost = []
+    for post in posts:
+        temp = {
+            'id':post.id,
+            'time': post.create_time.strftime("%b %d, %Y")
+        }
+        fmtpost.append(temp)
+    template = render_template('sitemap/sitemap.xml', posts=fmtpost)
+    response = make_response(template)
+    response.headers['Content-Type'] = 'application/xml'
+    return response
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
