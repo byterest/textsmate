@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="记录学习生活想法的博客">
-    <meta name="keywords" content="Flask Python Website">
-    <meta name="author" content="lws">
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@textsmate" />
-    <meta name="twitter:title" content="{% block twittertitle %} {% endblock %}" />
-    <meta name="twitter:description" content="{% block twitterdesc %} {% endblock %}" />
-    {% if config['DEBUG'] %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    {% else %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/textsmate@1.0.0/main.css">
-    {% endif %}
-   <title>{% block title %} {% endblock %}</title>
-   <link rel="shortcut icon" href="{{ url_for('static', filename='logo/favicon.ico') }}">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ config['GATAG'] }}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', '{{ config["GATAG"] }}');
-</script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="记录学习生活想法的博客">
+  <meta name="keywords" content="Flask Python Website">
+  <meta name="author" content="lws">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@textsmate" />
+  <meta name="twitter:title" content="{% block twittertitle %} {% endblock %}" />
+  <meta name="twitter:description" content="{% block twitterdesc %} {% endblock %}" />
+  {% if config['DEBUG'] %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ config['GATAG'] }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', '{{ config["GATAG"] }}');
+  </script>
+  {% else %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/textsmate@1.0.1/main.css">
+  {% endif %}
+  <title>{% block title %} {% endblock %}</title>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='logo/favicon.ico') }}">
+
 
 </head>
+
 <body>
   <div class="head">
     <div class="header">
-        <a href="/" class="head_logo">TextsMate</a>
-        <nav> <a href="/about" class="head_logo">About</a> </nav>
+      <a href="/" class="head_logo">TextsMate</a>
+      <nav> <a href="/about" class="head_logo">About</a> </nav>
     </div>
-</div>
-   {%  block body %} {% endblock %}
-
-<div class="site_foot">
-  <div class="container">
-    © Copyright TextsMate by lws 2020. <a class="promotion" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> 
   </div>
-  <p>
-    Hosted on <a class="promotion" href="https://www.vultr.com/?ref=7500386">vultr</a>
-  </p>
-</div>
+  {%  block body %} {% endblock %}
+
+  <div class="site_foot">
+    <div class="container">
+      © Copyright TextsMate by lws 2020. <a class="promotion" href="https://creativecommons.org/licenses/by/4.0/">CC BY
+        4.0</a>
+    </div>
+    <p>
+      Hosted on <a class="promotion" href="https://www.vultr.com/?ref=7500386">vultr</a>
+    </p>
+  </div>
 </body>
 </html>

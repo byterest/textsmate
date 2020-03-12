@@ -150,12 +150,17 @@ def sitemap():
     for post in posts:
         temp = {
             'id':post.id,
-            'time': post.create_time.strftime("%b %d, %Y")
+            'time': post.create_time.strftime("%Y-%m-%d")
         }
         fmtpost.append(temp)
     template = render_template('sitemap/sitemap.xml', posts=fmtpost)
     response = make_response(template)
     response.headers['Content-Type'] = 'application/xml'
     return response
+
+@app.route('/yandex_3eeaa5d2b933e925.html')
+def yandex():
+    return render_template('yandex/yandex_3eeaa5d2b933e925.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

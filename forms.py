@@ -16,7 +16,6 @@ class WriteForm(FlaskForm):
     body = TextAreaField('内容',validators=[InputRequired()])
 
 class EditForm(FlaskForm):
-    
     title = StringField('标题', validators=[InputRequired()])
     body = TextAreaField('内容', validators=[InputRequired()])
     

@@ -42,7 +42,6 @@
     margin: 0 auto;
     padding: 0 16px;
     box-sizing: border-box;
-    padding-top: 30px;
 }
 
 .main {
@@ -133,11 +132,15 @@ input[type="submit"] {
     font-family: "Helvetica Neue","Helvetica","Arial","PingFang SC","Hiragino Sans GB","Droid Sans Fallback","Microsoft YaHei",sans-serif;
 }
 
-.article  a:not(.referlink) {
+.article >  a:not(.referlink) {
     border-bottom: 2px solid #42b983;
     text-decoration: none;
     color: gray;
     
+}
+:not(pre) > code {
+    background-color: lightcyan;
+    font-size: 16px;
 }
 .promotion {
     border-bottom: 2px solid #42b983;
@@ -168,6 +171,7 @@ blockquote {
     border-left: 4px solid #42b983;
     padding-left: 20px;
     margin: 2em 0;
+    background-color: #f7fafc;
 }
 
 body {
@@ -201,12 +205,12 @@ pre > code {
 .referlink {
     display: block;
     padding: 14px;
-    border: 1px solid #f6f6f6;
+    border: 1px solid #9ae6b4;
     border-radius: 4px;
     text-decoration: none;
-    background: #f6f6f6;
     margin: 5px;
-    color: gray;
+    color: #2f855a;
+    background-color: #f0fff4;
 }
 
 
