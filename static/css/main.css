@@ -132,7 +132,7 @@ input[type="submit"] {
     font-family: "Helvetica Neue","Helvetica","Arial","PingFang SC","Hiragino Sans GB","Droid Sans Fallback","Microsoft YaHei",sans-serif;
 }
 
-.article >  a:not(.referlink) {
+.article   a:not(.referlink) {
     border-bottom: 2px solid #42b983;
     text-decoration: none;
     color: gray;
@@ -141,6 +141,7 @@ input[type="submit"] {
 :not(pre) > code {
     background-color: lightcyan;
     font-size: 16px;
+    word-wrap: break-word;
 }
 .promotion {
     border-bottom: 2px solid #42b983;
