@@ -13,6 +13,7 @@
   <meta name="twitter:description" content="{% block twitterdesc %} {% endblock %}" />
   {% if config['DEBUG'] %}
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  {% else %}
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ config['GATAG'] }}"></script>
   <script>
@@ -22,7 +23,6 @@
 
     gtag('config', '{{ config["GATAG"] }}');
   </script>
-  {% else %}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/textsmate@latest/main.css">
   {% endif %}
   <title>{% block title %} {% endblock %}</title>
