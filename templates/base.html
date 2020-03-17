@@ -27,8 +27,7 @@
   {% endif %}
   <title>{% block title %} {% endblock %}</title>
   <link rel="shortcut icon" href="{{ url_for('static', filename='logo/favicon.ico') }}">
-
-
+  {% block cssextends %} {% endblock %}
 </head>
 
 <body>
@@ -48,6 +47,7 @@
     <p>
       Hosted on <a class="promotion" href="https://www.vultr.com/?ref=7500386">vultr</a>
     </p>
+    {% block jsextends %} {% endblock %}
   </div>
 </body>
 </html>
