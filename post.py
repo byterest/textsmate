@@ -50,7 +50,6 @@ def edit(id):
         flash("There is an error")
     return render_template('edit.html', form=form, id=id)
 
-
 @postbp.route('/<int:id>/delete')
 @login_required
 def delete(id):

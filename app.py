@@ -9,7 +9,6 @@ import mistune
 from markupsafe import Markup
 from post import postbp
 
-
 app = Flask(__name__)
 
 # blueprint register
@@ -17,7 +16,8 @@ app.register_blueprint(postbp, url_prefix='/post')
 
 # config of flask app
 app.config.from_object('config')
-#      
+
+# bind app     
 db.init_app(app)
 login_manager.init_app(app)
 
@@ -73,7 +73,6 @@ def logout():
     logout_user()
     return redirect(url_for('signin'))
 
-
 @app.route('/admin/')
 @login_required
 def manage():
@@ -88,10 +87,10 @@ def manage():
         fmtpost.append(temp)
     return render_template('manage.html', posts=fmtpost)
 
-
 @app.route('/about')
 def about():
     return render_template('about.html')
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('errors/404.html'), 404
