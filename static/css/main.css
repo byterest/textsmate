@@ -3,7 +3,7 @@
     padding-top: 10px;
     padding-bottom: 20px;
 }
-.item-main{
+.item-main {
     color: #304455;
     text-decoration: none;
 }
@@ -214,4 +214,25 @@ pre > code {
     background-color: #f0fff4;
 }
 
-
+table {
+    font-family: verdana,arial,sans-serif;
+    color:#333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;
+    width: 100%;
+}
+table th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #e2f3f5;
+}
+table td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #ffffff;
+}
